@@ -36,6 +36,7 @@
       "size" : "256x256"
     },
     {
+      "filename" : "icon.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "256x256"
