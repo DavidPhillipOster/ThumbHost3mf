@@ -21,7 +21,7 @@ This will cause PrusaSlicer to append a base64-encoded 128x128 .png image of the
 
 * You may find that the Finder has made ThumbHost3MF the default app for .3mf and .gcode files. If that happens, in Finder, do a Get Info any .3mf and .gcode file and set the default app to what you wish.
 
-I'm posting this to get early feedback. In an ideal world, the thumnail provider would be inside the PrusaSlicer app and  this app would not be necessary. If this app does not break the world, I'll work on submitting a pull request on PrusaSlicer.
+I'm posting this to get early feedback. In an ideal world, the thumbnail provider would be inside the PrusaSlicer app and  this app would not be necessary. If this app does not break the world, I'll work on submitting a pull request on PrusaSlicer.
 
 ## License
 
