@@ -23,11 +23,13 @@ This will cause PrusaSlicer to append a base64-encoded 128x128 .png image of the
 
 * You may find that the Finder has made ThumbHost3MF the default app for .3mf and .gcode files. If that happens, in Finder, do a Get Info any .3mf and .gcode file and set the default app to what you wish.
 
-I'm posting this to get early feedback. In an ideal world, the thumbnail provider would be inside the PrusaSlicer app and  this app would not be necessary. If this app does not break the world, I'll work on submitting a pull request on PrusaSlicer.
+* Not all .3mf files have an included thumbnail. I'm using those that, when unzipped, have a Metadata/thumbnail.png or .jpg. Most .3mf files created in 2021 or later do.
 
-In the `Original Prusa Drivers 2.5.0` distribution, in the `Sample Objects`  subdirectory, the `MK3_MK3S_MK3S+/3MF` folder has .3mf files with embedded thumbnails, but the `MINI_MINI+/3MF` files do not. 
+* In the `Original Prusa Drivers 2.5.0` distribution, in the `Sample Objects`  subdirectory, the `MK3_MK3S_MK3S+/3MF` folder has .3mf files with embedded thumbnails, but the `MINI_MINI+/3MF` files do not. 
 
 If you open the `MINI_MINI+/3MF` files and **Save** them, PrusaSlicer adds the thumbnails.
+
+I'm posting this to get early feedback. In an ideal world, the thumbnail provider would be inside the PrusaSlicer app and  this app would not be necessary. If this app does not break the world, I'll work on submitting a pull request on PrusaSlicer.
 
 ## License
 
