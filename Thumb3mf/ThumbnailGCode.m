@@ -66,20 +66,37 @@ NSData *HeadOfFile(NSURL *fileURL){
   return d;
 }
 
+/// @return the first occurence of needle1 in haystack, but only if it is followed by an occurence of needle2 on the same line.
+char *strstr2(const char *haystack, const char *needle1, const char *needle2) {
+  char *p = strstr(haystack, needle1);
+  if (p) {
+    char *p1 = strstr(p, needle2);
+    if (p1) {
+      for(;p < p1;--p1) {
+        if ('\n' == *p1) {
+          return nil;
+        }
+      }
+    }
+    return p1 ? p : nil;
+  }
+  return p;
+}
+
 /// @return the base64 encoded thumbnail data (with leading semicolons on each line)
 NSArray<NSData *> *ThumbnailBase64sFromData(NSData * data){
   if (data.length < 10) { return nil; }
   NSMutableArray<NSData *> *a = [NSMutableArray array];
   const char *start = data.bytes;
   while(YES){
-    start = strstr(start, "; thumbnail begin");
+    start = strstr2(start, "; thumbnail", " begin");
     if (nil == start) {
       return a;
     }
     start = strstr(start, "\n");
     if (nil == start) { return nil; }
     start += 1; // skip that newline.
-    const char *end = strstr(start, "; thumbnail end");
+    const char *end = strstr2(start, "; thumbnail", " end");
     if (nil == end) { return a; }
     [a addObject: [NSData dataWithBytes:start length:end - start]];
     start = end + 1;
