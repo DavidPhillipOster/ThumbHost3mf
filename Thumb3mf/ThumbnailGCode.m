@@ -5,6 +5,8 @@
 
 #import "ThumbnailGCode.h"
 
+#import "ThumbnailBinaryGCode.h"
+
 #import <AppKit/AppKit.h>
 
 /// @return same aspect ratio as size, filling the longest dimension of the square rect.
@@ -42,8 +44,8 @@ NSImage *ResizeImageWithLegendColor(NSImage *img, CGSize desiredSize, NSString *
 }
 
 /// @return Resized image to the 512, 512 that macOS wants.
-NSImage *ResizeImage(NSImage *img){
-  return ResizeImageWithLegendColor(img, CGSizeMake(512, 512), @"gcode", [NSColor colorWithRed:1 green:0.2 blue:0.2  alpha:0.5]);
+NSImage *ResizeImage(NSImage *img, NSString *stamp){
+  return ResizeImageWithLegendColor(img, CGSizeMake(512, 512), stamp, [NSColor colorWithRed:1 green:0.2 blue:0.2  alpha:0.5]);
 }
 
 /// @return first maxHead bytes as a C string in an NSData
@@ -144,6 +146,10 @@ NSImage *LargestIcon(NSArray<NSImage *> *images){
 }
 
 NSImage *ThumbnailGCode(NSURL *s) {
-  return ResizeImage(LargestIcon(IconsFromData(FromBase64s(ThumbnailBase64sFromData(HeadOfFile(s))))));
+  NSData *data = HeadOfFile(s);
+  if (0 == strncmp((const char *) data.bytes, "GCDE", 4)) {
+    return ResizeImage(LargestIcon(IconsFromData(ThumbnailFromBinaryGCode(data))), @"bgcode");
+  }
+  return ResizeImage(LargestIcon(IconsFromData(FromBase64s(ThumbnailBase64sFromData(data)))), @"gcode");
 }
 

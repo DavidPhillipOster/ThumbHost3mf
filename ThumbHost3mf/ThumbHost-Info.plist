@@ -16,6 +16,7 @@
 			<key>LSItemContentTypes</key>
 			<array>
 				<string>com.example.gcode</string>
+                <string>com.example.bgcode</string>
 			</array>
 			<key>NSDocumentClass</key>
 			<string>GCodeDocument</string>
@@ -59,6 +60,29 @@
 				<key>public.mime-type</key>
 				<array>
 					<string>text/gcode</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>BinaryGCode</string>
+			<key>UTTypeIdentifier</key>
+			<string>com.example.bgcode</string>
+			<key>UTTypeIcons</key>
+			<dict/>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>bgcode</string>
+				</array>
+				<key>public.mime-type</key>
+				<array>
+					<string>application/octet-stream</string>
 				</array>
 			</dict>
 		</dict>

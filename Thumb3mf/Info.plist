@@ -10,6 +10,7 @@
 			<array>
 				<string>com.example.3mf</string>
 				<string>com.example.gcode</string>
+                <string>com.example.bgcode</string>
 			</array>
 			<key>QLThumbnailMinimumDimension</key>
 			<integer>0</integer>
