@@ -6,7 +6,7 @@
 
 #import "ThumbnailBinaryGCode.h"
 
-enum {
+typedef enum ErrorCode {
   noError,
   badHeader,
   badBlockType,
@@ -16,23 +16,26 @@ enum {
   noMoreBlocks,
   badRead,
   badSeek,
-};
+} ErrorCode;
 
-static int ThumbnailBlock(NSUInteger compressedSize, NSData *data, NSUInteger *indexp, NSMutableArray<NSData *> *a){
-  if (*indexp + compressedSize + 4 <= data.length) {
+// Every block type has a 2 byte parameter field after the block header.
+static int ParameterSize = 2;
+
+static ErrorCode ThumbnailBlock(NSUInteger compressedSize, NSData *data, NSUInteger *indexp, NSMutableArray<NSData *> *a){
+  if (*indexp + compressedSize <= data.length) {
     const char *buffer = (const char *)data.bytes;
     NSData *imageData = [NSData dataWithBytes:buffer + *indexp length:compressedSize];
     if (imageData) {
       [a addObject:imageData];
     }
-    // TODO: where in the spec does it say we skip 4 additional bytes after the thumbnail?
-    *indexp += compressedSize + 4;
+    *indexp += compressedSize;
+    *indexp += 4; // TODO: why 4 bytes to get to next block?
     return noErr;
   }
   return badRead;
 }
 
-static int NextBinaryGCodeBlock(NSData *data, NSUInteger *indexp, NSUInteger checkType, NSMutableArray<NSData *> *a){
+static ErrorCode NextBinaryGCodeBlock(NSData *data, NSUInteger *indexp, NSUInteger checkType, NSMutableArray<NSData *> *a){
   if (*indexp + 12 < data.length) { // if remaining bytes to examine could hold a block.
     const char *buffer = (const char *)data.bytes;
     uint16_t blockType; memcpy(&blockType, &buffer[*indexp], 2); *indexp += 2;
@@ -55,11 +58,12 @@ static int NextBinaryGCodeBlock(NSData *data, NSUInteger *indexp, NSUInteger che
     fprintf(stderr, "\nbloc:%d compres:%d siz:%d checktype:%d \n", (int)blockType, (int)compressionType, (int)compressedSize, (int)checkType);
 #endif
     if (checkType) {
-      *indexp += 6; // TODO: where in the spec does it say why 6 and not 4 for checksum size.
+      *indexp += 4; // checksum size.
       if (data.length <= *indexp) {
         return badChecksum; // couldn't read checksum
       }
     }
+    *indexp += ParameterSize;
     if (blockType == 5) {
       return ThumbnailBlock(compressedSize, data, indexp, a);
     } else if (blockType < 5) {
