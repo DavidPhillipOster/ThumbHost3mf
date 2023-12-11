@@ -19,9 +19,11 @@
     // First way: Draw the thumbnail into the current context, set up with AppKit's coordinate system.
     handler([QLThumbnailReply replyWithContextSize:request.maximumSize currentContextDrawingBlock:^BOOL {
         NSImage *image = nil;
-        if (NSOrderedSame == [request.fileURL.pathExtension caseInsensitiveCompare:@"gcode"]) {
+        NSString *extension = request.fileURL.pathExtension;
+        if (NSOrderedSame == [extension caseInsensitiveCompare:@"gcode"] ||
+            NSOrderedSame == [extension caseInsensitiveCompare:@"bgcode"]) {
           image = ThumbnailGCode(request.fileURL);
-        } else if (NSOrderedSame == [request.fileURL.pathExtension caseInsensitiveCompare:@"3mf"]) {
+        } else if (NSOrderedSame == [extension caseInsensitiveCompare:@"3mf"]) {
           image = Thumbnail3MF(request.fileURL);
         }
         if (image) {

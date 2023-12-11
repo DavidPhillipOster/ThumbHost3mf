@@ -10,13 +10,12 @@
 			<key>CFBundleTypeName</key>
 			<string>gcode</string>
 			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
+			<string>Viewer</string>
 			<key>LSHandlerRank</key>
 			<string>Alternate</string>
 			<key>LSItemContentTypes</key>
 			<array>
 				<string>com.example.gcode</string>
-                <string>com.example.bgcode</string>
 			</array>
 			<key>NSDocumentClass</key>
 			<string>GCodeDocument</string>
@@ -27,7 +26,7 @@
 			<key>CFBundleTypeName</key>
 			<string>3mf</string>
 			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
+			<string>Viewer</string>
 			<key>LSHandlerRank</key>
 			<string>Alternate</string>
 			<key>LSItemContentTypes</key>
@@ -36,6 +35,22 @@
 			</array>
 			<key>NSDocumentClass</key>
 			<string>Document3MF</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeIconSystemGenerated</key>
+			<integer>1</integer>
+			<key>CFBundleTypeName</key>
+			<string>bgcode</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSHandlerRank</key>
+			<string>Alternate</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.turbozen.bgcode</string>
+			</array>
+			<key>NSDocumentClass</key>
+			<string>GCodeDocument</string>
 		</dict>
 	</array>
 	<key>UTImportedTypeDeclarations</key>
@@ -47,10 +62,10 @@
 			</array>
 			<key>UTTypeDescription</key>
 			<string>GCode</string>
-			<key>UTTypeIdentifier</key>
-			<string>com.example.gcode</string>
 			<key>UTTypeIcons</key>
 			<dict/>
+			<key>UTTypeIdentifier</key>
+			<string>com.turbozen.gcode</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
@@ -70,10 +85,10 @@
 			</array>
 			<key>UTTypeDescription</key>
 			<string>BinaryGCode</string>
-			<key>UTTypeIdentifier</key>
-			<string>com.example.bgcode</string>
 			<key>UTTypeIcons</key>
 			<dict/>
+			<key>UTTypeIdentifier</key>
+			<string>com.example.bgcode</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
@@ -81,9 +96,7 @@
 					<string>bgcode</string>
 				</array>
 				<key>public.mime-type</key>
-				<array>
-					<string>application/octet-stream</string>
-				</array>
+				<array/>
 			</dict>
 		</dict>
 		<dict>
@@ -93,10 +106,10 @@
 			</array>
 			<key>UTTypeDescription</key>
 			<string>3MF</string>
-			<key>UTTypeIdentifier</key>
-			<string>com.example.3mf</string>
 			<key>UTTypeIcons</key>
 			<dict/>
+			<key>UTTypeIdentifier</key>
+			<string>com.example.3mf</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
