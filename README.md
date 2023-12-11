@@ -1,5 +1,5 @@
 # ThumbHost3mf
-A macOS app that hosts a thumbnail provider that makes the Finder displays the thumbnails built in to some .gcode and .3mf files.
+A macOS app that hosts a thumbnail provider that makes the Finder displays the thumbnails built in to some .gcode, .bgcode, and .3mf files.
 
 I got tired of my gcode and 3mf files looking like 
 
@@ -30,6 +30,12 @@ This will cause PrusaSlicer to append a base64-encoded 128x128 .png image of the
 If you open the `MINI_MINI+/3MF` files and **Save** them, PrusaSlicer adds the thumbnails.
 
 I'm posting this to get early feedback. In an ideal world, the thumbnail provider would be inside the PrusaSlicer app and  this app would not be necessary. If this app does not break the world, I'll work on submitting a pull request on PrusaSlicer.
+
+## Versions
+
+* The original 1.0 version only handle gcode files, and only png and jpg thumbnails.
+
+* the 1.2 version handles those and also bgcode files, and qoi thumbnails.
 
 ## License
 

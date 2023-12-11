@@ -25,11 +25,11 @@ enum {
 @property (nonatomic, readonly, copy) NSString *path;
 
 /// The items contained in the zip file. The array of `NSString` objects.
-@property (nonatomic, readonly) NSArray *items;
+@property (nonatomic, readonly, nullable) NSArray *items;
 
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithZipFile:(NSString *)path error:(NSError * _Nullable *)outErr NS_DESIGNATED_INITIALIZER;
-- (NSData *)dataWithContentsOfFile:(NSString *)path error:(NSError * _Nullable *)outErr;
+- (nullable NSData *)dataWithContentsOfFile:(NSString *)path error:(NSError * _Nullable *)outErr;
 
 @end
 

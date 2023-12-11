@@ -5,6 +5,7 @@
 
 #import "ThumbnailGCode.h"
 
+#import "QOIFImageFromData.h"
 #import "ThumbnailBinaryGCode.h"
 
 #import <AppKit/AppKit.h>
@@ -124,7 +125,12 @@ NSArray<NSImage *> *IconsFromData(NSArray<NSData *> *datas){
   NSMutableArray<NSImage *> *a = [NSMutableArray array];
   for (NSData *data in datas) {
     if (10 < data.length) {
-      NSImage *img = [[NSImage alloc] initWithData:data];
+      NSImage *img = nil;
+      if (data != nil && 0 == strncmp((const char *) data.bytes, "qoif", 4)) {
+        img = QOIFImageFromData(data);
+      } else {
+        img = [[NSImage alloc] initWithData:data];
+      }
       if (img) {
         [a addObject:img];
       }
@@ -147,7 +153,7 @@ NSImage *LargestIcon(NSArray<NSImage *> *images){
 
 NSImage *ThumbnailGCode(NSURL *s) {
   NSData *data = HeadOfFile(s);
-  if (0 == strncmp((const char *) data.bytes, "GCDE", 4)) {
+  if (data != nil && 0 == strncmp((const char *) data.bytes, "GCDE", 4)) {
     return ResizeImage(LargestIcon(IconsFromData(ThumbnailFromBinaryGCode(data))), @"bgcode");
   }
   return ResizeImage(LargestIcon(IconsFromData(FromBase64s(ThumbnailBase64sFromData(data)))), @"gcode");

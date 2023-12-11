@@ -27,8 +27,10 @@
 		6368CB37298F43A700B7551C /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 6368CB2C298F414800B7551C /* ioapi.c */; };
 		6368CB38298F492800B7551C /* ThumbnailGCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6368CB1E298F356F00B7551C /* ThumbnailGCode.m */; };
 		6368CB39298F5BC800B7551C /* Thumbnail3MF.m in Sources */ = {isa = PBXBuildFile; fileRef = 6368CB28298F3FAB00B7551C /* Thumbnail3MF.m */; };
-		63CEA4A22B25A0CB00958BC3 /* ThumbnailBinaryGCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEA4A12B25A0CB00958BC3 /* ThumbnailBinaryGCode.m */; };
-		63CEA4A32B25A0CB00958BC3 /* ThumbnailBinaryGCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEA4A12B25A0CB00958BC3 /* ThumbnailBinaryGCode.m */; };
+		63CEA49E2B25960A00958BC3 /* ThumbnailBinaryGCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEA49D2B25960A00958BC3 /* ThumbnailBinaryGCode.m */; };
+		63CEA49F2B25960A00958BC3 /* ThumbnailBinaryGCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEA49D2B25960A00958BC3 /* ThumbnailBinaryGCode.m */; };
+		63CEA4A62B266CBE00958BC3 /* QOIFImageFromData.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEA4A52B266CBE00958BC3 /* QOIFImageFromData.m */; };
+		63CEA4A72B266CBE00958BC3 /* QOIFImageFromData.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEA4A52B266CBE00958BC3 /* QOIFImageFromData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,8 +87,11 @@
 		6368CB32298F42AF00B7551C /* Unzip3MF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Unzip3MF.h; sourceTree = "<group>"; };
 		6368CB33298F42AF00B7551C /* Unzip3MF.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Unzip3MF.m; sourceTree = "<group>"; };
 		639DDB27298F60A1000038DE /* ThumbHost3mf.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ThumbHost3mf.entitlements; sourceTree = "<group>"; };
-		63CEA4A02B25A0CB00958BC3 /* ThumbnailBinaryGCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThumbnailBinaryGCode.h; sourceTree = "<group>"; };
-		63CEA4A12B25A0CB00958BC3 /* ThumbnailBinaryGCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbnailBinaryGCode.m; sourceTree = "<group>"; };
+		63CEA49C2B25960A00958BC3 /* ThumbnailBinaryGCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThumbnailBinaryGCode.h; sourceTree = "<group>"; };
+		63CEA49D2B25960A00958BC3 /* ThumbnailBinaryGCode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThumbnailBinaryGCode.m; sourceTree = "<group>"; };
+		63CEA4A42B266CBE00958BC3 /* QOIFImageFromData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QOIFImageFromData.h; sourceTree = "<group>"; };
+		63CEA4A52B266CBE00958BC3 /* QOIFImageFromData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QOIFImageFromData.m; sourceTree = "<group>"; };
+		63FBAC8C2B15450E00040641 /* Read Me - ThumbHost3mf.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "Read Me - ThumbHost3mf.rtf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,10 +164,12 @@
 			isa = PBXGroup;
 			children = (
 				6368CB2A298F414800B7551C /* minizip */,
+				63CEA4A42B266CBE00958BC3 /* QOIFImageFromData.h */,
+				63CEA4A52B266CBE00958BC3 /* QOIFImageFromData.m */,
 				6368CB1F298F356F00B7551C /* ThumbnailGCode.h */,
 				6368CB1E298F356F00B7551C /* ThumbnailGCode.m */,
-				63CEA4A02B25A0CB00958BC3 /* ThumbnailBinaryGCode.h */,
-				63CEA4A12B25A0CB00958BC3 /* ThumbnailBinaryGCode.m */,
+				63CEA49C2B25960A00958BC3 /* ThumbnailBinaryGCode.h */,
+				63CEA49D2B25960A00958BC3 /* ThumbnailBinaryGCode.m */,
 				6368CB0F298F2EC800B7551C /* ThumbnailProvider.h */,
 				6368CB10298F2EC800B7551C /* ThumbnailProvider.m */,
 				6368CB27298F3FAB00B7551C /* Thumbnail3MF.h */,
@@ -286,8 +293,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6368CB36298F43A400B7551C /* unzip.c in Sources */,
+				63CEA4A62B266CBE00958BC3 /* QOIFImageFromData.m in Sources */,
 				6368CAE1298F261500B7551C /* main.m in Sources */,
-				63CEA4A22B25A0CB00958BC3 /* ThumbnailBinaryGCode.m in Sources */,
+				63CEA49E2B25960A00958BC3 /* ThumbnailBinaryGCode.m in Sources */,
 				6368CB26298F38EF00B7551C /* Document3MF.m in Sources */,
 				6368CADA298F261500B7551C /* AppDelegate.m in Sources */,
 				6368CB23298F38AE00B7551C /* GCodeDocument.m in Sources */,
@@ -303,11 +311,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6368CB29298F3FAB00B7551C /* Thumbnail3MF.m in Sources */,
-				63CEA4A32B25A0CB00958BC3 /* ThumbnailBinaryGCode.m in Sources */,
+				63CEA49F2B25960A00958BC3 /* ThumbnailBinaryGCode.m in Sources */,
 				6368CB34298F42AF00B7551C /* Unzip3MF.m in Sources */,
 				6368CB20298F356F00B7551C /* ThumbnailGCode.m in Sources */,
 				6368CB30298F414800B7551C /* unzip.c in Sources */,
 				6368CB11298F2EC800B7551C /* ThumbnailProvider.m in Sources */,
+				63CEA4A72B266CBE00958BC3 /* QOIFImageFromData.m in Sources */,
 				6368CB31298F414800B7551C /* ioapi.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,7 +473,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.-mfQuickLook";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -490,7 +499,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.-mfQuickLook";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -514,7 +523,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.-mfQuickLook.-MFThumb";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -539,7 +548,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.-mfQuickLook.-MFThumb";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
