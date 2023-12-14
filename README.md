@@ -5,7 +5,11 @@ I got tired of my gcode and 3mf files looking like
 
 ![](images/before.png) when they could look like this: ![](images/thumbs.png)
 
-To Install:
+## IMPORTANT: 
+
+* macOS requires that apps that host Quicklook plugins, like ThumbHost3MF, MUST be in `/Applications` or one of its subdirectories for the Quicklook plugin to function correctly! Note this is the actual `/Application` directory, and not an Application directory inside your home directory.
+
+## To Install:
 
 * Download and run the ThumbHost3MF app. If you don't want to compile it yourself, grab the compiled code from [Releases](https://github.com/DavidPhillipOster/ThumbHost3MF/releases/tag/1.2)
 
