@@ -3,7 +3,7 @@ A macOS app that hosts a thumbnail provider that makes the Finder displays the t
 
 I got tired of my gcode and 3mf files looking like 
 
-![](images/before.png) when they could look like this: ![](images/thumbs.png)
+ when they could look like this: ![](images/thumbs.png)
 
 ## IMPORTANT: 
 
@@ -39,7 +39,10 @@ I'm posting this to get early feedback. In an ideal world, the thumbnail provide
 
 * The original 1.0 version only handle gcode files, and only png and jpg thumbnails.
 
-* the 1.2 version handles those and also bgcode files, and qoi thumbnails.
+* Version 1.2  handles those and also bgcode files, and qoi thumbnails.
+
+* Version 1.3 sets the mimimum compatible version of macOS to OS X 10.13, High Sierra from 2017, but still works through macOS Sonoma, 14.2.1, 2023.
+
 
 ## License
 
