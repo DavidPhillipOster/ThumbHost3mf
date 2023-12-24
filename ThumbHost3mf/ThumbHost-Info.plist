@@ -47,7 +47,7 @@
 			<string>Alternate</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>com.turbozen.bgcode</string>
+				<string>com.example.bgcode</string>
 			</array>
 			<key>NSDocumentClass</key>
 			<string>GCodeDocument</string>
@@ -65,7 +65,7 @@
 			<key>UTTypeIcons</key>
 			<dict/>
 			<key>UTTypeIdentifier</key>
-			<string>com.turbozen.gcode</string>
+			<string>com.example.gcode</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>

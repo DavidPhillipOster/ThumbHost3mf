@@ -1,7 +1,7 @@
 # ThumbHost3mf
 A macOS app that hosts a thumbnail provider that makes the Finder displays the thumbnails built in to some .gcode, .bgcode, and .3mf files.
 
-I got tired of my gcode and 3mf files looking like 
+I got tired of my gcode and 3mf files looking like ![](images/before.png) 
 
  when they could look like this: ![](images/thumbs.png)
 
@@ -39,9 +39,9 @@ I'm posting this to get early feedback. In an ideal world, the thumbnail provide
 
 * The original 1.0 version only handle gcode files, and only png and jpg thumbnails.
 
-* Version 1.2  handles those and also bgcode files, and qoi thumbnails.
+* the 1.2 version handles those and also bgcode files, and qoi thumbnails.
 
-* Version 1.3 sets the mimimum compatible version of macOS to OS X 10.13, High Sierra from 2017, but still works through macOS Sonoma, 14.2.1, 2023.
+* Version 1.3 sets the mimimum compatible version of macOS to OS X 10.15, Catalina from 2019, but still works through macOS Sonoma, 14.2.1, 2023. OS X 10.15 is the earliest because the embedded QuickLook plugin inherits from a class in the QuicklookThumbing framework that was introduced then.
 
 
 ## License
