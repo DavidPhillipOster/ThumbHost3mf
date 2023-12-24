@@ -11,7 +11,7 @@ I got tired of my gcode and 3mf files looking like ![](images/before.png)
 
 ## To Install:
 
-* Download and run the ThumbHost3MF app. If you don't want to compile it yourself, grab the compiled code from [Releases](https://github.com/DavidPhillipOster/ThumbHost3MF/releases/tag/1.2)
+* Download and run the ThumbHost3MF app. If you don't want to compile it yourself, grab the compiled code from [Releases](https://github.com/DavidPhillipOster/ThumbHost3MF/releases/tag/1.3)
 
 * Use ThumbHost3MF's **File > Open** menu item and point at a directory containing .gcode or .3mf files: that will kick the Finder into noticing the enbedded thumbnail presenter.
 
