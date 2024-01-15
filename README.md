@@ -35,6 +35,10 @@ If you open the `MINI_MINI+/3MF` files and **Save** them, PrusaSlicer adds the t
 
 I'm posting this to get early feedback. In an ideal world, the thumbnail provider would be inside the PrusaSlicer app and  this app would not be necessary. If this app does not break the world, I'll work on submitting a pull request on PrusaSlicer.
 
+## Other
+
+1/15/2024 is the day I learned that https://github.com/jkavalik/GcodeThumbnailExtension makes .gcode icons visible on Microsoft Windows. I haven't tried it so I can't comment on quality.
+
 ## Versions
 
 * The original 1.0 version only handle gcode files, and only png and jpg thumbnails.
