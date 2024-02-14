@@ -11,7 +11,7 @@ I got tired of my gcode and 3mf files looking like ![](images/before.png)
 
 ## To Install:
 
-* Download and run the ThumbHost3MF app. If you don't want to compile it yourself, grab the compiled code from [Releases](https://github.com/DavidPhillipOster/ThumbHost3MF/releases/tag/1.3)
+* Download and run the ThumbHost3MF app. If you don't want to compile it yourself, grab the compiled code from [Releases](https://github.com/DavidPhillipOster/ThumbHost3MF/releases/tag/1.4)
 
 * Use ThumbHost3MF's **File > Open** menu item and point at a directory containing .gcode or .3mf files: that will kick the Finder into noticing the enbedded thumbnail presenter.
 
@@ -41,12 +41,13 @@ I'm posting this to get early feedback. In an ideal world, the thumbnail provide
 
 ## Versions
 
-* The original 1.0 version only handle gcode files, and only png and jpg thumbnails.
+* Version original 1.0 only handle gcode files, and only png and jpg thumbnails.
 
-* the 1.2 version handles those and also bgcode files, and qoi thumbnails.
+* Version 1.2 handles those and also bgcode files, and qoi thumbnails.
 
-* Version 1.3 sets the mimimum compatible version of macOS to OS X 10.15, Catalina from 2019, but still works through macOS Sonoma, 14.2.1, 2023. OS X 10.15 is the earliest because the embedded QuickLook plugin inherits from a class in the QuicklookThumbing framework that was introduced then.
+* Version 1.3 sets the mimimum compatible version of macOS to OS X 10.15, Catalina from 2019, but still works through macOS Sonoma, 14.2.1, 2023. OS X 10.15 is the earliest because the embedded QuickLook plugin inherits from a class in the QuicklookThumbnailing framework that was introduced then.
 
+* Version 1.4 extends this to also handle thumbnails inside Bambu Studio or Orca Slicer
 
 ## License
 
