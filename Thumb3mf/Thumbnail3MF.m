@@ -17,6 +17,12 @@ NSImage *Thumbnail3MF(NSURL *fileURL) {
     if (nil == thumbData) {
       thumbData = [unzip dataWithContentsOfFile:@"Metadata/thumbnail.jpg" error:&error];
     }
+      if (nil == thumbData) {
+        thumbData = [unzip dataWithContentsOfFile:@"Metadata/plate_1.png" error:&error];
+      }
+      if (nil == thumbData) {
+        thumbData = [unzip dataWithContentsOfFile:@"Metadata/plate_1.jpg" error:&error];
+      }
     if (thumbData) {
       NSImage *image = [[NSImage alloc] initWithData:thumbData];
       if (image) {
