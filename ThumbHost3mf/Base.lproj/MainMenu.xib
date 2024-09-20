@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21507" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21507"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22690"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,6 +15,9 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
+                <outlet property="enableLegendCheckbox" destination="7hg-ZV-WdJ" id="9fq-P7-vJV"/>
+                <outlet property="imageView" destination="mJr-ec-ByZ" id="sp7-5K-0g3"/>
+                <outlet property="settingsWindow" destination="B5o-oi-5Vk" id="GJm-zv-rpO"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -30,7 +34,11 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                            <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
+                            <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
+                                <connections>
+                                    <action selector="showSettingsPanel:" target="Voe-Tx-rLC" id="AGp-bS-WKA"/>
+                                </connections>
+                            </menuItem>
                             <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                             <menuItem title="Services" id="NMo-om-nkz">
                                 <modifierMask key="keyEquivalentModifierMask"/>
@@ -182,7 +190,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hXn-di-iEG">
+                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hXn-di-iEG">
                         <rect key="frame" x="18" y="262" width="444" height="78"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" allowsUndo="NO" id="PhV-HK-I1V">
@@ -192,9 +200,61 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mJr-ec-ByZ" customClass="ImageView">
+                        <rect key="frame" x="20" y="20" width="256" height="256"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="YVC-Jr-DeM"/>
+                    </imageView>
                 </subviews>
             </view>
             <point key="canvasLocation" x="200" y="400"/>
+        </window>
+        <window title="Settings" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="B5o-oi-5Vk">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="283" y="305" width="253" height="96"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1415"/>
+            <value key="minSize" type="size" width="253" height="96"/>
+            <value key="maxSize" type="size" width="253" height="96"/>
+            <value key="minFullScreenContentSize" type="size" width="253" height="96"/>
+            <value key="maxFullScreenContentSize" type="size" width="253" height="96"/>
+            <view key="contentView" id="qcS-qD-DNW">
+                <rect key="frame" x="0.0" y="0.0" width="253" height="96"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7hg-ZV-WdJ">
+                        <rect key="frame" x="18" y="59" width="155" height="18"/>
+                        <buttonCell key="cell" type="check" title="Show file type in icon" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="cqy-8z-q2x">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="legendHiddenChanged:" target="Voe-Tx-rLC" id="qxa-mI-rva"/>
+                        </connections>
+                    </button>
+                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="c19-qo-4mk">
+                        <rect key="frame" x="20" y="20" width="215" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="UVA-fH-g7Z"/>
+                            <constraint firstAttribute="width" constant="211" id="Yl5-JX-V2b"/>
+                        </constraints>
+                        <textFieldCell key="cell" title="Doesn't affect thumbnails Quicklook has already cached." id="xH0-G8-Nbk">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="c19-qo-4mk" firstAttribute="top" secondItem="7hg-ZV-WdJ" secondAttribute="bottom" constant="8" symbolic="YES" id="0tf-WS-ILi"/>
+                    <constraint firstItem="7hg-ZV-WdJ" firstAttribute="leading" secondItem="qcS-qD-DNW" secondAttribute="leading" constant="20" symbolic="YES" id="JWZ-Dy-Vth"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="c19-qo-4mk" secondAttribute="trailing" symbolic="YES" id="npm-TR-wfo"/>
+                    <constraint firstItem="7hg-ZV-WdJ" firstAttribute="top" secondItem="qcS-qD-DNW" secondAttribute="top" constant="20" symbolic="YES" id="qZi-Dh-9zu"/>
+                    <constraint firstItem="c19-qo-4mk" firstAttribute="leading" secondItem="qcS-qD-DNW" secondAttribute="leading" constant="22" id="ssi-zE-n8H"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7hg-ZV-WdJ" secondAttribute="trailing" constant="20" symbolic="YES" id="yXt-GL-wQ5"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="106.5" y="714"/>
         </window>
     </objects>
 </document>

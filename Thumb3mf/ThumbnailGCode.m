@@ -10,8 +10,21 @@
 
 #import <AppKit/AppKit.h>
 
+// Turn an identifier from the build environment into a quoted C string.
+#define xstr(s) str(s)
+#define str(s) #s
+
+BOOL IsLegendEnabled(void) {
+  static NSUserDefaults *defaults;
+   if (nil == defaults) {
+    // the suite name is your developer ID, a period, and your developer prefix, all as an NSString.
+    defaults = [[NSUserDefaults alloc] initWithSuiteName:@"" xstr(SUITE_NAME)];
+  }
+  return ![defaults boolForKey:@"legendDisabled"];
+}
+
 /// @return same aspect ratio as size, filling the longest dimension of the square rect.
-NSRect RectOfSizeCenteredIn(CGSize size, NSRect rect) {
+static NSRect RectOfSizeCenteredIn(CGSize size, NSRect rect) {
   NSRect r = rect;
   if (size.width < size.height) {
     r.size.width = size.width *  rect.size.height/size.height;
@@ -30,16 +43,18 @@ NSImage *ResizeImageWithLegendColor(NSImage *img, CGSize desiredSize, NSString *
   [[NSColor clearColor] set];
   NSRectFill(NSMakeRect(0, 0, desiredSize.width, desiredSize.height));
   [img drawInRect:RectOfSizeCenteredIn(img.size, NSMakeRect(0, 0, desiredSize.width, desiredSize.height))];
-  NSShadow *shadow = [[NSShadow alloc] init];
-  shadow.shadowBlurRadius = desiredSize.height/20;
-  NSDictionary *attr = @{
-    NSForegroundColorAttributeName: color,
-    NSFontAttributeName : [NSFont boldSystemFontOfSize:desiredSize.height/5],
-    NSShadowAttributeName : shadow,
-  };
-  NSAttributedString *as = [[NSAttributedString alloc] initWithString:legend attributes:attr];
-  CGSize size = [as size];
-  [as drawInRect:NSMakeRect((desiredSize.width - size.width)/2, 0, desiredSize.width, desiredSize.height * 0.35)];
+  if (IsLegendEnabled()) {
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowBlurRadius = desiredSize.height/20;
+    NSDictionary *attr = @{
+      NSForegroundColorAttributeName: color,
+      NSFontAttributeName : [NSFont boldSystemFontOfSize:desiredSize.height/5],
+      NSShadowAttributeName : shadow,
+    };
+    NSAttributedString *as = [[NSAttributedString alloc] initWithString:legend attributes:attr];
+    CGSize size = [as size];
+    [as drawInRect:NSMakeRect((desiredSize.width - size.width)/2, 0, desiredSize.width, desiredSize.height * 0.35)];
+  }
   [newImage unlockFocus];
   return newImage;
 }

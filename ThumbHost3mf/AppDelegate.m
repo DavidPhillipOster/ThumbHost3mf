@@ -7,9 +7,21 @@
 
 #import "AppDelegate.h"
 
-@interface AppDelegate ()
+#import "Thumbnail3MF.h"
+#import "ThumbnailGCode.h"
 
-@property (strong) IBOutlet NSWindow *window;
+// Turn an identifier from the build environment into a quoted string.
+#define xstr(s) str(s)
+#define str(s) #s
+
+
+@interface AppDelegate ()
+@property IBOutlet NSWindow *window;
+@property IBOutlet NSImageView *imageView;
+@property IBOutlet NSWindow *settingsWindow;
+@property IBOutlet NSButton *enableLegendCheckbox;
+@property (nonatomic)NSUserDefaults *defaults;
+@property NSURL *file;
 @end
 
 @implementation AppDelegate
@@ -22,5 +34,66 @@
   return YES;
 }
 
+- (void)application:(NSApplication *)sender openURLs:(NSArray<NSURL *> *)urls {
+  for(NSURL *url in urls){
+    [self application:sender openURL:url];
+  }
+}
+
+- (BOOL)application:(NSApplication *)sender openFile:(NSString *)filename {
+  return [self application:sender openURL:[NSURL fileURLWithPath:filename]];
+}
+
+- (BOOL)application:(NSApplication *)sender openURL:(NSURL *)url {
+  self.file = url;
+  NSString *fileExtension = [[url pathExtension] lowercaseString];
+  NSImage *thumbnail = nil;
+  if ([fileExtension isEqual:@"gcode"] || [fileExtension isEqual:@"bgcode"]) {
+    thumbnail = ThumbnailGCode(url);
+  } else if ([fileExtension isEqual:@"3mf"]) {
+    thumbnail = Thumbnail3MF(url);
+  }
+  if (thumbnail) {
+    NSWindow *window = self.window;
+    window.title = url.lastPathComponent;
+    self.imageView.image = thumbnail;
+    return YES;
+  }
+  return NO;
+}
+
+- (NSUserDefaults *)defaults {
+  if (nil == _defaults) {
+    // the suite name is your developer ID, a period, and your developer prefix, all as an NSString.
+    _defaults = [[NSUserDefaults alloc] initWithSuiteName:@"" xstr(SUITE_NAME)];
+  }
+  return _defaults;
+}
+
+- (BOOL)isLegendEnabled{
+  return ![self.defaults boolForKey:@"legendDisabled"];
+}
+
+- (void)setIsLegendEnabled:(BOOL)isEnabled {
+  [self.defaults setBool:!isEnabled forKey:@"legendDisabled"];
+  [self.defaults synchronize];
+}
+
+
+- (IBAction)showSettingsPanel:(id)sender {
+  if (self.settingsWindow.isVisible) {
+    [self.settingsWindow orderOut:self];
+  } else {
+    self.enableLegendCheckbox.state = self.isLegendEnabled;
+    [self.settingsWindow makeKeyAndOrderFront:self];
+  }
+}
+
+- (IBAction)legendHiddenChanged:(id)sender {
+  self.isLegendEnabled = self.enableLegendCheckbox.state == NSControlStateValueOn;
+  if (self.file) {
+    [self application:sender openURL:self.file];
+  }
+}
 
 @end

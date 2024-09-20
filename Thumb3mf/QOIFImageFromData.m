@@ -57,7 +57,11 @@ typedef union {
 	unsigned int v;
 } qoi_rgba_t;
 
+// Clang falsely claims the variable is used, but I need it to exist to get its size.
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunused"
 static const unsigned char qoi_padding[8] = {0,0,0,0,0,0,0,1};
+#pragma clang diagnostic pop
 
 static unsigned int qoi_read_32(const unsigned char *bytes, int *p) {
 	unsigned int a = bytes[(*p)++];

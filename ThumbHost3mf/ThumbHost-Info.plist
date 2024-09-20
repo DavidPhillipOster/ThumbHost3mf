@@ -15,10 +15,10 @@
 			<string>Alternate</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>com.example.gcode</string>
+				<string>${DEVELOPER_PREFIX}.gcode</string>
 			</array>
 			<key>NSDocumentClass</key>
-			<string>GCodeDocument</string>
+			<string></string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeIconSystemGenerated</key>
@@ -31,10 +31,10 @@
 			<string>Alternate</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>com.example.3mf</string>
+				<string>${DEVELOPER_PREFIX}.3mf</string>
 			</array>
 			<key>NSDocumentClass</key>
-			<string>Document3MF</string>
+			<string></string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeIconSystemGenerated</key>
@@ -47,11 +47,17 @@
 			<string>Alternate</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>com.example.bgcode</string>
+				<string>${DEVELOPER_PREFIX}.bgcode</string>
 			</array>
 			<key>NSDocumentClass</key>
-			<string>GCodeDocument</string>
+			<string></string>
 		</dict>
+	</array>
+	<key>CFBundleTypeExtensions</key>
+	<array>
+		<string>gcode</string>
+		<string>bgcode</string>
+		<string>3mf</string>
 	</array>
 	<key>UTImportedTypeDeclarations</key>
 	<array>
@@ -65,7 +71,7 @@
 			<key>UTTypeIcons</key>
 			<dict/>
 			<key>UTTypeIdentifier</key>
-			<string>com.example.gcode</string>
+			<string>${DEVELOPER_PREFIX}.gcode</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
@@ -88,7 +94,7 @@
 			<key>UTTypeIcons</key>
 			<dict/>
 			<key>UTTypeIdentifier</key>
-			<string>com.example.bgcode</string>
+			<string>${DEVELOPER_PREFIX}.bgcode</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
@@ -109,7 +115,7 @@
 			<key>UTTypeIcons</key>
 			<dict/>
 			<key>UTTypeIdentifier</key>
-			<string>com.example.3mf</string>
+			<string>${DEVELOPER_PREFIX}.3mf</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>

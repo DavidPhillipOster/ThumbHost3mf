@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63109BEE2C9CD8070025BE4A /* ImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63109BED2C9CD8070025BE4A /* ImageView.m */; };
 		6368CADA298F261500B7551C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6368CAD9298F261500B7551C /* AppDelegate.m */; };
 		6368CADC298F261500B7551C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6368CADB298F261500B7551C /* Assets.xcassets */; };
 		6368CADF298F261500B7551C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6368CADD298F261500B7551C /* MainMenu.xib */; };
@@ -16,15 +17,13 @@
 		6368CB11298F2EC800B7551C /* ThumbnailProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6368CB10298F2EC800B7551C /* ThumbnailProvider.m */; };
 		6368CB16298F2EC800B7551C /* ThumbMF3.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 6368CB0A298F2EC800B7551C /* ThumbMF3.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6368CB20298F356F00B7551C /* ThumbnailGCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6368CB1E298F356F00B7551C /* ThumbnailGCode.m */; };
-		6368CB23298F38AE00B7551C /* GCodeDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 6368CB22298F38AE00B7551C /* GCodeDocument.m */; };
-		6368CB26298F38EF00B7551C /* Document3MF.m in Sources */ = {isa = PBXBuildFile; fileRef = 6368CB25298F38EF00B7551C /* Document3MF.m */; };
 		6368CB29298F3FAB00B7551C /* Thumbnail3MF.m in Sources */ = {isa = PBXBuildFile; fileRef = 6368CB28298F3FAB00B7551C /* Thumbnail3MF.m */; };
-		6368CB30298F414800B7551C /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 6368CB2B298F414800B7551C /* unzip.c */; };
-		6368CB31298F414800B7551C /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 6368CB2C298F414800B7551C /* ioapi.c */; };
+		6368CB30298F414800B7551C /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 6368CB2B298F414800B7551C /* unzip.c */; settings = {COMPILER_FLAGS = "-Wno-strict-prototypes"; }; };
+		6368CB31298F414800B7551C /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 6368CB2C298F414800B7551C /* ioapi.c */; settings = {COMPILER_FLAGS = "-Wno-strict-prototypes"; }; };
 		6368CB34298F42AF00B7551C /* Unzip3MF.m in Sources */ = {isa = PBXBuildFile; fileRef = 6368CB33298F42AF00B7551C /* Unzip3MF.m */; };
 		6368CB35298F439D00B7551C /* Unzip3MF.m in Sources */ = {isa = PBXBuildFile; fileRef = 6368CB33298F42AF00B7551C /* Unzip3MF.m */; };
-		6368CB36298F43A400B7551C /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 6368CB2B298F414800B7551C /* unzip.c */; };
-		6368CB37298F43A700B7551C /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 6368CB2C298F414800B7551C /* ioapi.c */; };
+		6368CB36298F43A400B7551C /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 6368CB2B298F414800B7551C /* unzip.c */; settings = {COMPILER_FLAGS = "-Wno-strict-prototypes"; }; };
+		6368CB37298F43A700B7551C /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 6368CB2C298F414800B7551C /* ioapi.c */; settings = {COMPILER_FLAGS = "-Wno-strict-prototypes"; }; };
 		6368CB38298F492800B7551C /* ThumbnailGCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6368CB1E298F356F00B7551C /* ThumbnailGCode.m */; };
 		6368CB39298F5BC800B7551C /* Thumbnail3MF.m in Sources */ = {isa = PBXBuildFile; fileRef = 6368CB28298F3FAB00B7551C /* Thumbnail3MF.m */; };
 		63CEA49E2B25960A00958BC3 /* ThumbnailBinaryGCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEA49D2B25960A00958BC3 /* ThumbnailBinaryGCode.m */; };
@@ -58,6 +57,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		63109BEC2C9CD8070025BE4A /* ImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageView.h; sourceTree = "<group>"; };
+		63109BED2C9CD8070025BE4A /* ImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageView.m; sourceTree = "<group>"; };
 		6368CAD5298F261500B7551C /* ThumbHost3mf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThumbHost3mf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6368CAD8298F261500B7551C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6368CAD9298F261500B7551C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -74,10 +75,6 @@
 		6368CB1A298F304700B7551C /* ThumbHost-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ThumbHost-Info.plist"; sourceTree = "<group>"; };
 		6368CB1E298F356F00B7551C /* ThumbnailGCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbnailGCode.m; sourceTree = "<group>"; };
 		6368CB1F298F356F00B7551C /* ThumbnailGCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThumbnailGCode.h; sourceTree = "<group>"; };
-		6368CB21298F38AE00B7551C /* GCodeDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCodeDocument.h; sourceTree = "<group>"; };
-		6368CB22298F38AE00B7551C /* GCodeDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCodeDocument.m; sourceTree = "<group>"; };
-		6368CB24298F38EF00B7551C /* Document3MF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Document3MF.h; sourceTree = "<group>"; };
-		6368CB25298F38EF00B7551C /* Document3MF.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Document3MF.m; sourceTree = "<group>"; };
 		6368CB27298F3FAB00B7551C /* Thumbnail3MF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Thumbnail3MF.h; sourceTree = "<group>"; };
 		6368CB28298F3FAB00B7551C /* Thumbnail3MF.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Thumbnail3MF.m; sourceTree = "<group>"; };
 		6368CB2B298F414800B7551C /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
@@ -139,10 +136,8 @@
 				6368CB1A298F304700B7551C /* ThumbHost-Info.plist */,
 				6368CAD8298F261500B7551C /* AppDelegate.h */,
 				6368CAD9298F261500B7551C /* AppDelegate.m */,
-				6368CB21298F38AE00B7551C /* GCodeDocument.h */,
-				6368CB22298F38AE00B7551C /* GCodeDocument.m */,
-				6368CB24298F38EF00B7551C /* Document3MF.h */,
-				6368CB25298F38EF00B7551C /* Document3MF.m */,
+				63109BEC2C9CD8070025BE4A /* ImageView.h */,
+				63109BED2C9CD8070025BE4A /* ImageView.m */,
 				6368CADB298F261500B7551C /* Assets.xcassets */,
 				6368CADD298F261500B7551C /* MainMenu.xib */,
 				6368CAE0298F261500B7551C /* main.m */,
@@ -238,7 +233,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastUpgradeCheck = 1410;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					6368CAD4298F261500B7551C = {
 						CreatedOnToolsVersion = 14.1;
@@ -295,10 +290,9 @@
 				63CEA4A62B266CBE00958BC3 /* QOIFImageFromData.m in Sources */,
 				6368CAE1298F261500B7551C /* main.m in Sources */,
 				63CEA49E2B25960A00958BC3 /* ThumbnailBinaryGCode.m in Sources */,
-				6368CB26298F38EF00B7551C /* Document3MF.m in Sources */,
 				6368CADA298F261500B7551C /* AppDelegate.m in Sources */,
-				6368CB23298F38AE00B7551C /* GCodeDocument.m in Sources */,
 				6368CB39298F5BC800B7551C /* Thumbnail3MF.m in Sources */,
+				63109BEE2C9CD8070025BE4A /* ImageView.m in Sources */,
 				6368CB35298F439D00B7551C /* Unzip3MF.m in Sources */,
 				6368CB38298F492800B7551C /* ThumbnailGCode.m in Sources */,
 				6368CB37298F43A700B7551C /* ioapi.c in Sources */,
@@ -375,9 +369,12 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPER_PREFIX = com.example;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -385,6 +382,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"NOUNCRYPT=1",
 					"DEBUG=1",
+					"SUITE_NAME=\"$(SUITE_NAME)\"",
 					"$(inherited)",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -393,11 +391,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GROUPSUFFIX = "${DEVELOPER_PREFIX}.-mf";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				SUITE_NAME = "$(DEVELOPMENT_TEAM).$(GROUPSUFFIX)";
 			};
 			name = Debug;
 		};
@@ -434,22 +434,30 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPER_PREFIX = com.example;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = "NOUNCRYPT=1";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"NOUNCRYPT=1",
+					"SUITE_NAME=\"$(SUITE_NAME)\"",
+				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GROUPSUFFIX = "${DEVELOPER_PREFIX}.-mf";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
+				SUITE_NAME = "$(DEVELOPMENT_TEAM).$(GROUPSUFFIX)";
 			};
 			name = Release;
 		};
@@ -459,9 +467,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ThumbHost3mf/ThumbHost3mf.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1.4;
+				CURRENT_PROJECT_VERSION = 1.5;
+				DEAD_CODE_STRIPPING = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ThumbHost3mf/ThumbHost-Info.plist";
@@ -473,8 +484,8 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.4;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.-mfQuickLook";
+				MARKETING_VERSION = 1.5;
+				PRODUCT_BUNDLE_IDENTIFIER = "${DEVELOPER_PREFIX}.-mfQuickLook";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
@@ -486,9 +497,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ThumbHost3mf/ThumbHost3mf.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1.4;
+				CURRENT_PROJECT_VERSION = 1.5;
+				DEAD_CODE_STRIPPING = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ThumbHost3mf/ThumbHost-Info.plist";
@@ -500,8 +514,8 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.4;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.-mfQuickLook";
+				MARKETING_VERSION = 1.5;
+				PRODUCT_BUNDLE_IDENTIFIER = "${DEVELOPER_PREFIX}.-mfQuickLook";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
@@ -511,8 +525,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Thumb3mf/MFThumb.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.4;
+				CURRENT_PROJECT_VERSION = 1.5;
+				DEAD_CODE_STRIPPING = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Thumb3mf/Info.plist;
@@ -525,7 +541,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MARKETING_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.-mfQuickLook.-MFThumb";
+				PRODUCT_BUNDLE_IDENTIFIER = "${DEVELOPER_PREFIX}.-mfQuickLook.-MFThumb";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -536,8 +552,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Thumb3mf/MFThumb.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.4;
+				CURRENT_PROJECT_VERSION = 1.5;
+				DEAD_CODE_STRIPPING = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Thumb3mf/Info.plist;
@@ -549,8 +567,8 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION ="$(CURRENT_PROJECT_VERSION)";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.-mfQuickLook.-MFThumb";
+				MARKETING_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				PRODUCT_BUNDLE_IDENTIFIER = "${DEVELOPER_PREFIX}.-mfQuickLook.-MFThumb";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;

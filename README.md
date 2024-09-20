@@ -13,7 +13,7 @@ I got tired of my gcode and 3mf files looking like ![](images/before.png)
 
 * Download and run the ThumbHost3MF app. If you don't want to compile it yourself, grab the compiled code from [Releases](https://github.com/DavidPhillipOster/ThumbHost3MF/releases/tag/1.4)
 
-* Use ThumbHost3MF's **File > Open** menu item and point at a directory containing .gcode or .3mf files: that will kick the Finder into noticing the enbedded thumbnail presenter.
+* Use ThumbHost3MF's **File > Open** menu item and point at a directory containing .gcode or .3mf files: that will kick the Finder into noticing the embedded thumbnail presenter.
 
 * To compile it yourself, use your team and domain name. I uploaded this as com.example, but in the release I signed it with my team and domain name.
 
@@ -35,6 +35,14 @@ If you open the `MINI_MINI+/3MF` files and **Save** them, PrusaSlicer adds the t
 
 I'm posting this to get early feedback. In an ideal world, the thumbnail provider would be inside the PrusaSlicer app and  this app would not be necessary. If this app does not break the world, I'll work on submitting a pull request on PrusaSlicer.
 
+## To Build in Xcode
+
+In the project build setting, the `DEVELOPER_PREFIX` is set to `com.example` - change it to your actual prefix.
+
+Currently, the project on Github has no `DEVELOPMENT_TEAM` you should set this in the `Signing and Capabilities` panel of the project's targets.
+
+You may also need to set a current scheme.
+
 ## Other
 
 1/15/2024 is the day I learned that https://github.com/jkavalik/GcodeThumbnailExtension makes .gcode icons visible on Microsoft Windows. I haven't tried it so I can't comment on quality.
@@ -45,9 +53,11 @@ I'm posting this to get early feedback. In an ideal world, the thumbnail provide
 
 * Version 1.2 handles those and also bgcode files, and qoi thumbnails.
 
-* Version 1.3 sets the mimimum compatible version of macOS to OS X 10.15, Catalina from 2019, but still works through macOS Sonoma, 14.2.1, 2023. OS X 10.15 is the earliest because the embedded QuickLook plugin inherits from a class in the QuicklookThumbnailing framework that was introduced then.
+* Version 1.3 sets the minimum compatible version of macOS to OS X 10.15, Catalina from 2019, but still works through macOS Sonoma, 14.2.1, 2023. OS X 10.15 is the earliest because the embedded QuickLook plugin inherits from a class in the QuicklookThumbnailing framework that was introduced then.
 
 * Version 1.4 extends this to also handle thumbnails inside Bambu Studio or Orca Slicer
+
+* Version 1.5 adds a settings dialog box to the app to allow the user to control whether the icons are labeled with the filetype. Labeling is on by default.
 
 ## License
 
