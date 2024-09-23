@@ -67,7 +67,7 @@
   self.isInDrop = NO;
   NSArray<NSDictionary *> *documentTypes = [NSBundle.mainBundle objectForInfoDictionaryKey:@"UTImportedTypeDeclarations"];
   NSArray<NSString *> *typeUTIs = [documentTypes valueForKey:@"UTTypeIdentifier"];
-  NSLog(@"%@", typeUTIs);
+//  NSLog(@"%@", typeUTIs);
   [sender enumerateDraggingItemsWithOptions:0
           forView:self
           classes:@[ [NSFilePromiseReceiver class], [NSURL class] ]

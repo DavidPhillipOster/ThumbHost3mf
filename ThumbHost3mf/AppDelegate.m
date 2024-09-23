@@ -10,6 +10,8 @@
 #import "Thumbnail3MF.h"
 #import "ThumbnailGCode.h"
 
+#import <UniformTypeIdentifiers/UniformTypeIdentifiers.h>
+
 // Turn an identifier from the build environment into a quoted string.
 #define xstr(s) str(s)
 #define str(s) #s
@@ -40,6 +42,28 @@
   }
 }
 
+- (IBAction)openDocument:(nullable id)sender {
+  NSOpenPanel *openPanel = NSOpenPanel.openPanel;
+  NSArray<NSString *> *types = [NSBundle.mainBundle objectForInfoDictionaryKey:@"CFBundleTypeExtensions"];
+  if (@available(macOS 11.0, *)) {
+    NSMutableArray<UTType *> *documentTypes = [NSMutableArray array];
+    for (NSString *ext in types) {
+      UTType *type = [UTType typeWithFilenameExtension:ext];
+      if (type) {
+        [documentTypes addObject:type];
+      }
+    }
+    openPanel.allowedContentTypes = documentTypes;
+  } else {
+    openPanel.allowedFileTypes = types;
+  }
+  [openPanel beginWithCompletionHandler:^(NSModalResponse result) {
+    if (result == NSModalResponseOK) {
+      [self application:NSApp openURLs:openPanel.URLs];
+    }
+  }];
+}
+
 - (BOOL)application:(NSApplication *)sender openFile:(NSString *)filename {
   return [self application:sender openURL:[NSURL fileURLWithPath:filename]];
 }
@@ -57,6 +81,8 @@
     NSWindow *window = self.window;
     window.title = url.lastPathComponent;
     self.imageView.image = thumbnail;
+    [NSDocumentController.sharedDocumentController noteNewRecentDocumentURL:url];
+    [window setRepresentedURL:url];
     return YES;
   }
   return NO;

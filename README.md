@@ -59,6 +59,8 @@ You may also need to set a current scheme.
 
 * Version 1.5 adds a settings dialog box to the app to allow the user to control whether the icons are labeled with the filetype. Labeling is on by default.
 
+* Version 1.6 corrects the Open items in the file menu, which were accidently disabled as I went from a Document based app. The plugin was not affected.
+
 ## License
 
 Apache 2 [License](LICENSE)
