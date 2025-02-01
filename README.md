@@ -14,7 +14,7 @@ I got tired of my gcode and 3mf files looking like ![](images/before.png)
 * Download and put the ThumbHost3MF app in `/Applications` or a subdirectory of `/Applications`. Run the ThumbHost3MF app. You only need to run it once to register the Quicklook plugin it contains.
 If you don't want to compile the app yourself, grab the compiled code from [Releases](https://github.com/DavidPhillipOster/ThumbHost3MF/releases/tag/1.6)
 
-* Use ThumbHost3MF's **File > Open** menu item and point at a directory containing .gcode or .3mf files: that will kick the Finder into noticing the embedded thumbnail presenter.
+* Use ThumbHost3MF's **File > Open** menu item and point at a directory containing .gcode or .3mf files: that will kick the Finder into noticing the embedded thumbnail presenter. (You can open a .gcode or .3mf file at this point to prove that ThumbHost3MF can see the embedded thumbnail image in it.)
 
 * To compile it yourself, use your team and domain name. I uploaded this as com.example, but in the release I signed it with my team and domain name.
 
