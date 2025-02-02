@@ -62,8 +62,13 @@ You may also need to set a current scheme.
 
 * Version 1.6 corrects the Open items in the File menu, which were accidentally disabled as I went from a Document based app. The plugin was not affected.
 
+* Version 1.7 Thanks to [yungsnuzzy](https://github.com/yungsnuzzy) who showed me a .3mf compressed with a new version of the [ZIP file format](https://en.wikipedia.org/wiki/ZIP_(file_format%29), probably [ZIP 64](https://en.wikipedia.org/wiki/ZIP_(file_format%29#ZIP64). I've updated ThumbMF3's minizip to use https://zlib.net/ zlib-1.3.1/contrib/minizip
+
 ## License
 
 Apache 2 [License](LICENSE)
 
+## Acknowledgements
+
+minizip from https://zlib.net/
 
