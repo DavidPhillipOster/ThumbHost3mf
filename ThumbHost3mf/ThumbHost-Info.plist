@@ -59,6 +59,8 @@
 		<string>bgcode</string>
 		<string>3mf</string>
 	</array>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>UTImportedTypeDeclarations</key>
 	<array>
 		<dict>

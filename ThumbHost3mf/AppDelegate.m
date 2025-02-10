@@ -44,6 +44,7 @@
 
 - (IBAction)openDocument:(nullable id)sender {
   NSOpenPanel *openPanel = NSOpenPanel.openPanel;
+  openPanel.allowsMultipleSelection = YES;
   NSArray<NSString *> *types = [NSBundle.mainBundle objectForInfoDictionaryKey:@"CFBundleTypeExtensions"];
   if (@available(macOS 11.0, *)) {
     NSMutableArray<UTType *> *documentTypes = [NSMutableArray array];
