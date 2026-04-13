@@ -44,6 +44,12 @@ Currently, the project on Github has no `DEVELOPMENT_TEAM` you should set this i
 
 You may also need to set a current scheme.
 
+## Note
+
+A user [reports](https://github.com/DavidPhillipOster/ThumbHost3mf/issues/21) that after installing ThumbHost3MF, .3mf files would open in it by default. I haven't observed this behavior myself. This is done by the system in the act of installing and not something I can fix.
+
+You can fix it: Select any .3mf in Finder, then use the Finder's `Get Info` menu command. You can select which app opens that .3mf, or press the button on the `Get Info` dialog to set it for all .3mf
+
 ## Other
 
 1/15/2024 is the day I learned that https://github.com/jkavalik/GcodeThumbnailExtension makes .gcode icons visible on Microsoft Windows. I haven't tried it so I can't comment on quality.
