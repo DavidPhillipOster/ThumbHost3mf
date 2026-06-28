@@ -54,6 +54,8 @@ You can fix it: Select any .3mf in Finder, then use the Finder's `Get Info` menu
 
 1/15/2024 is the day I learned that https://github.com/jkavalik/GcodeThumbnailExtension makes .gcode icons visible on Microsoft Windows. I haven't tried it so I can't comment on quality.
 
+6/28/2026 Gustavo Constantino wrote https://github.com/guconstantino/3mfmacOSPreview a Quick Look preview extension (com.apple.quicklook.preview) that shows the embedded thumbnail of .3mf / .gcode / .bgcode files at full size when you press Space. It complements ThumbHost3mf (icon thumbnail) — both coexist, and it reuses the same com.turbozen.\* UTIs.
+
 ## Versions
 
 * Version original 1.0 only handle gcode files, and only png and jpg thumbnails.
